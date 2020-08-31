@@ -1,0 +1,11 @@
+.form-control:focus {
+    border-color: #28a745;
+} 
+
+.form-control {
+    border-color: black;
+} 
+
+#button-container {
+    padding-bottom: 5%;
+}
