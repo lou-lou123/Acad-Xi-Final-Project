@@ -9,3 +9,7 @@ section {
 #task-body {
     padding: 10%;
 }
+
+.navbar-brand {
+    padding-right: 30%;
+}
