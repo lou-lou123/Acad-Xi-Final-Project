@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Button to open modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Open modal
+      </button>
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning">
+    <!-- Modal Contents -->
+    <div class="container mt-3 bg-yellow">
+        <form action="/action_page.php">
+          <div class="form-group">
+            <input type="text" class="form-control bg-warning" id="text" placeholder="Task Name" name="Task Name">
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control bg-warning" id="email" placeholder="Assignee" name="Assignee">
+            </div>
+            <div class="col">
+              <!-- <input type="text" class="form-control bg-warning" placeholder="Status" name="Status"> -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-warning form-control">Status</button>
+                <button type="button" class="btn btn-warning form-control dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">To Do</a>
+                  <a class="dropdown-item" href="#">In Progress</a>
+                  <a class="dropdown-item" href="#">Review</a>
+                  <a class="dropdown-item" href="#">Done</a>
+                </div>
+              </div> 
+            </div>
+          </div> 
+          <div class="row mt-3">
+            <div class="col">
+              <input type="text" class="form-control bg-warning" id="email" placeholder="Due Date" name="Due Date" required>
+            </div>
+            <div class="col-6">
+              <!-- <input type="text" class="form-control bg-warning" placeholder="Privacy" name="Privacy" required> -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-warning btn-block form-control">Privacy</button>
+                <button type="button" class="btn btn-warning form-control dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Public</a>
+                  <a class="dropdown-item" href="#">Private</a>
+                </div>
+              </div> 
+            </div>
+          </div> 
+          <textarea class="form-control mt-3 bg-warning" rows="5" id="comment" placeholder="Task Description" name="text"></textarea>
+          <h2>Colour Option</h2>
+          <div id="button-container">
+          <div class="btn-group btn-group-lg d-flex justify-content-center">
+            <button type="button" class="btn btn-primary bg-danger form-control">Red</button>
+            <button type="button" class="btn btn-primary bg-warning form-control">Yellow</button>
+            <button type="button" class="btn btn-primary form-control">Blue</button>
+          </div> 
+          </div>
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        </form>
+      </div>
+      
+</body>
+</html> 
