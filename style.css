@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(43, 45, 47);
+}
+
+section {
+    color: white;
+}
+
+#task-body {
+    padding: 10%;
+}
