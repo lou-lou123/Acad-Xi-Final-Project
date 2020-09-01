@@ -13,6 +13,11 @@ section {
     padding-bottom: 3%;
 }
 
+.form-control-plaintext {
+    color:white;
+    font-weight: bold;
+}
+
 .card-body {
     text-align: center;
 }
