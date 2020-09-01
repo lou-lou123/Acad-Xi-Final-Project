@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(43, 45, 47);
+    background-color: rgb(43, 45, 47)
 }
 
 section {
@@ -7,15 +7,8 @@ section {
 }
 
 #task-body {
-    display:flex;
-    justify-content: center;
     padding-top: 3%;
     padding-bottom: 3%;
-}
-
-.form-control-plaintext {
-    color:white;
-    font-weight: bold;
 }
 
 .card-body {
@@ -26,16 +19,21 @@ section {
     padding-right: 30%;
 }
 
+.form-control-plaintext {
+    color:white;
+}
+
 .btn {
     border-color: black;
 }
 
-.smallScreen {
-    width: 50vw;
+.btn-link {
+    color: white;
 }
 
-@media screen and (max-width: 600px) {
-    .smallScreen {
-        width: 75vw;
-    }
+#accordion{
+    text-align: center;
+    background-color: rgb(43, 45, 47)
 }
+
+

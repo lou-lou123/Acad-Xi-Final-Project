@@ -27,78 +27,131 @@
             </ul>
         </div>
     </nav>
-        <div id="task-body">
-            <ul class="list-group smallScreen">
-            <li>
+<!-- Accordion -->
+<div id="task-body">
+    <div id="accordion">
+        <div class="container">
+            <div class="row">
+                <div class="col">
                 <div class="card">
-                    <div class="card-body bg-primary">
-                        <h5 class="card-header text-white bg-dark">Task Name</h5>
-                        <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                        <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                        <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                        <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                        <a href="#" class="btn btn-success">Completed</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
+                <div class="card-header bg-dark" id="headingOne">
+                <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Shopping
+                </button>
+                </h5>
+                 </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body bg-primary">
+                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
+                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
+                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
+                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
+                <a href="#" class="btn btn-success">Completed</a>
+                <a href="#" class="btn btn-danger">Delete</a>
                 </div>
-            </li>
-            <li>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                 <div class="card">
-                    <div class="card-body bg-warning">
-                        <h5 class="card-header text-white bg-dark">Task Name</h5>
-                        <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                        <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                        <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                        <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                        <a href="#" class="btn btn-success">Completed</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
+                <div class="card-header bg-dark" id="headingTwo">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Walking Dog
+                </button>
+                </h5>
                 </div>
-            </li>
-            <li>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body bg-warning">
+                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
+                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
+                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
+                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
+                <a href="#" class="btn btn-success">Completed</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                 <div class="card">
-                    <div class="card-body bg-danger">
-                        <h5 class="card-header text-white bg-dark">Task Name</h5>
-                        <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                        <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                        <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                        <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                        <a href="#" class="btn btn-success">Completed</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
+                <div class="card-header bg-dark" id="headingThree">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Reading
+                </button>
+                </h5>
                 </div>
-            </li>
-            <li>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body bg-danger">
+                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
+                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
+                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
+                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
+                <a href="#" class="btn btn-success">Completed</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                 <div class="card">
-                    <div class="card-body bg-primary">
-                        <h5 class="card-header text-white bg-dark">Task Name</h5>
-                        <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                        <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                        <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                        <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                        <a href="#" class="btn btn-success">Completed</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
+                <div class="card-header bg-dark" id="headingFour">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Time For Project
+                </button>
+                </h5>
                 </div>
-            </li>
-            <li>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body bg-primary">
+                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
+                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
+                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
+                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
+                <a href="#" class="btn btn-success">Completed</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
                 <div class="card">
-                    <div class="card-body bg-danger">
-                        <h5 class="card-header text-white bg-dark">Task Name</h5>
-                        <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                        <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                        <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                        <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                        <a href="#" class="btn btn-success">Completed</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
+                <div class="card-header bg-dark" id="headingFive">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Tutoring
+                </button>
+                </h5>
                 </div>
-            </li>
-            </ul>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                <div class="card-body bg-danger">
+                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
+                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
+                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
+                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
+                <a href="#" class="btn btn-success">Completed</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
     <div class="task-button">
         <button type="button" class="btn btn-dark btn-lg btn-block">Create New Task</button>
-    </div>  
+    </div> 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
