@@ -6,9 +6,16 @@ section {
     color: white;
 }
 
-/* #task-body {
-    padding: 10%;
-} */
+#task-body {
+    display:flex;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.card-body {
+    text-align: center;
+}
 
 .navbar-brand {
     padding-right: 30%;
