@@ -112,12 +112,13 @@
                         </div>
                       </div>
                       <div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="taskStatus"
-                          placeholder="Task Status"
-                        />
+                        <select id="taskStatus" class="form-control" required>
+                          <option value="" disabled selected hidden>
+                            Task status
+                          </option>
+                          <option>In progress</option>
+                          <option>Completed</option>
+                        </select>
                       </div>
                       <button class="btn btn-success" type="submit">
                         Completed
