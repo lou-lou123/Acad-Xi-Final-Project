@@ -1,160 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Task Planner</title>
-</head>
-<body>
-            <nav class="navbar bg-dark navbar-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand mx-auto">My Tasks</a>
-                <form class="form-inline w-25" action="/action_page.php">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                </form>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">My Tasks</a>
-            </li>
-            </ul>
-        </div>
+  </head>
+  <body>
+    <nav class="navbar bg-dark navbar-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mx-auto">My Tasks</a>
+      <form class="form-inline w-25" action="/action_page.php">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+      </form>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Tasks</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-<!-- Accordion -->
-<div id="task-body">
-    <div id="accordion">
+    <!-- Accordion -->
+    <div id="task-body">
+      <div id="accordion">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                <div class="card">
+          <div class="row">
+            <div class="col">
+              <div class="card">
                 <div class="card-header bg-dark" id="headingOne">
-                <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Shopping
-                </button>
-                </h5>
-                 </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body bg-primary">
-                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                <a href="#" class="btn btn-success">Completed</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Shopping
+                    </button>
+                  </h5>
                 </div>
+                <div
+                  id="collapseOne"
+                  class="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body bg-primary">
+                    <form class="form-validate" novalidation>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskName"
+                          placeholder="Name"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Please enter at least 8 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskDescription"
+                          placeholder="Task Description"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Please enter at least 15 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="dueDate"
+                          placeholder="Due Date"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="assignee"
+                          placeholder="Assignee"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Please enter at least 8 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskStatus"
+                          placeholder="Task Status"
+                        />
+                      </div>
+                      <button class="btn btn-success" type="submit">
+                        Completed
+                      </button>
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
                 </div>
-                </div>
-                </div>
+              </div>
             </div>
-            <div class="row">
-                <div class="col">
-                <div class="card">
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card">
                 <div class="card-header bg-dark" id="headingTwo">
-                <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Walking Dog
-                </button>
-                </h5>
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Walking Dog
+                    </button>
+                  </h5>
                 </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body bg-warning">
-                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                <a href="#" class="btn btn-success">Completed</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body bg-warning">
+                    <form class="form-validate" novalidation>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskDescription"
+                          placeholder="Task Description"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 15 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="dueDate"
+                          placeholder="Due Date"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="assignee"
+                          placeholder="Assignee"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 8 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskStatus"
+                          placeholder="Task Status"
+                        />
+                      </div>
+                      <button class="btn btn-success" type="submit">
+                        Completed
+                      </button>
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
                 </div>
-                </div>
-                </div>
-                </div>
+              </div>
             </div>
-            <div class="row">
-                <div class="col">
-                <div class="card">
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card">
                 <div class="card-header bg-dark" id="headingThree">
-                <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Reading
-                </button>
-                </h5>
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Reading
+                    </button>
+                  </h5>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body bg-danger">
-                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                <a href="#" class="btn btn-success">Completed</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <div
+                  id="collapseThree"
+                  class="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body bg-danger">
+                    <form class="form-validate" novalidation>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskDescription"
+                          placeholder="Task Description"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 15 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="dueDate"
+                          placeholder="Due Date"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="assignee"
+                          placeholder="Assignee"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 8 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskStatus"
+                          placeholder="Task Status"
+                        />
+                      </div>
+                      <button class="btn btn-success" type="submit">
+                        Completed
+                      </button>
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
                 </div>
-                </div>
-                </div>
-                </div>
+              </div>
             </div>
-            <div class="row">
-                <div class="col">
-                <div class="card">
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card">
                 <div class="card-header bg-dark" id="headingFour">
-                <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Time For Project
-                </button>
-                </h5>
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Time For Project
+                    </button>
+                  </h5>
                 </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                <div class="card-body bg-primary">
-                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                <a href="#" class="btn btn-success">Completed</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <div
+                  id="collapseFour"
+                  class="collapse"
+                  aria-labelledby="headingFour"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body bg-primary">
+                    <form class="form-validate" novalidation>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskDescription"
+                          placeholder="Task Description"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 15 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="dueDate"
+                          placeholder="Due Date"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="assignee"
+                          placeholder="Assignee"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 8 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskStatus"
+                          placeholder="Task Status"
+                        />
+                      </div>
+                      <button class="btn btn-success" type="submit">
+                        Completed
+                      </button>
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
                 </div>
-                </div>
-                </div>
-                </div>
+              </div>
             </div>
-            <div class="row">
-                <div class="col">
-                <div class="card">
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card">
                 <div class="card-header bg-dark" id="headingFive">
-                <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Tutoring
-                </button>
-                </h5>
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
+                    >
+                      Tutoring
+                    </button>
+                  </h5>
                 </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                <div class="card-body bg-danger">
-                <input type="text" readonly class="form-control-plaintext" id="taskDescription" value="Task Description">
-                <input type="text" readonly class="form-control-plaintext" id="dueDate" value="Due Date">
-                <input type="text" readonly class="form-control-plaintext" id="assignee" value="Assignee">
-                <input type="text" readonly class="form-control-plaintext" id="taskStatus" value="Task Status">
-                <a href="#" class="btn btn-success">Completed</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <div
+                  id="collapseFive"
+                  class="collapse"
+                  aria-labelledby="headingFive"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body bg-danger">
+                    <form class="form-validate" novalidation>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskDescription"
+                          placeholder="Task Description"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 15 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="dueDate"
+                          placeholder="Due Date"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="assignee"
+                          placeholder="Assignee"
+                        />
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">
+                          Please enter at least 8 characters
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="taskStatus"
+                          placeholder="Task Status"
+                        />
+                      </div>
+                      <button class="btn btn-success" type="submit">
+                        Completed
+                      </button>
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
                 </div>
-                </div>
-                </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
     <div class="task-button">
-        <button type="button" class="btn btn-dark btn-lg btn-block">Create New Task</button>
-    </div> 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="index.js"></script>
-</body>
+      <button type="button" class="btn btn-dark btn-lg btn-block">
+        Create New Task
+      </button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
 </html>
