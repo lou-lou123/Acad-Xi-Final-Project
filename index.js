@@ -4,7 +4,8 @@ const formValidate = document.querySelector(".form-validate");
 const formValidateAssignee = document.querySelector("#assignee");
 const formValidateTaskDescription = document.querySelector("#taskDescription");
 const formValidateTaskName = document.querySelector("#taskName");
-
+let taskNameInput = 0;
+let completedForm = {name:""};
 
 formValidate.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -29,13 +30,16 @@ formValidate.addEventListener("submit", (event) => {
     formValidateTaskName.classList.add("is-valid");
     formValidateTaskName.classList.remove("is-invalid");
 // store input value into variable - Name -> String
-    formValidateTaskName.value;
-    alert(formValidateTaskName.value);
+    taskNameInput = formValidateTaskName.value;
   } else {
     formValidateTaskName.classList.add("is-invalid");
     formValidateTaskName.classList.remove("is-valid");
   }
+    console.log(completedForm);
 });
+
+
+
 
 // Store input value into a variable
 // ID -> Int
