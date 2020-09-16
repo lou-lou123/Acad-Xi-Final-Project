@@ -81,6 +81,7 @@ formValidate.addEventListener("submit", (event) => {
     completedForm.description,
     completedForm.assignee
   );
+    console.log(taskManager);
 
 //   // Form reset
   formReset = () => {
