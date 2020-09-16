@@ -17,7 +17,7 @@ let completedForm = { name: "", description: "", assignee: "" };
 formValidate.addEventListener("submit", (event) => {
   // Prevent default action
   event.preventDefault();
-
+  
   // AssignedTo -> Not Empty and longer than 8 characters
   if (formAssignee.value.length >= 8) {
     formAssignee.classList.add("is-valid");
@@ -54,6 +54,27 @@ formValidate.addEventListener("submit", (event) => {
     formTaskName.classList.remove("is-valid");
   }
 
+  // set min date as today
+  let today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth()+1;
+  let yyyy = today.getFullYear();
+  if(dd<10){
+          dd='0'+dd
+      } 
+      if(mm<10){
+          mm='0'+mm
+      } 
+
+  today.setUTCHours(0, 0, 0, 0);
+
+  if (formDueDate.valueAsNumber < today.getTime()) {
+    alert("Date is in the past");
+  } else {
+    formTaskName.classList.add("is-valid");
+    formTaskName.classList.remove("is-invalid");
+  }
+      
   // Add the task to the task manager
   taskManager.addTask(
     completedForm.name,
@@ -61,7 +82,8 @@ formValidate.addEventListener("submit", (event) => {
     completedForm.assignee
   );
     console.log(taskManager);
-  // Form reset
+
+//   // Form reset
   formReset = () => {
     formValidate.reset();
     completedForm = { name: "", description: "", assignee: "" };
