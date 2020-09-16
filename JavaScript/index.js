@@ -1,55 +1,70 @@
+// Initialize a new TaskManager with currentId set to 0
+const taskManager = new TaskManager(0);
 
+// Select the New Task Form
 const formValidate = document.querySelector(".form-validate");
 
 // variables for form fields
-const formValidateAssignee = document.querySelector("#assignee");
-const formValidateTaskDescription = document.querySelector("#taskDescription");
-const formValidateTaskName = document.querySelector("#taskName");
+const formAssignee = document.querySelector("#assignee");
+const formTaskDescription = document.querySelector("#taskDescription");
+const formTaskName = document.querySelector("#taskName");
+const formDueDate = document.querySelector("#dueDate");
 
 // variables for object
-let taskNameInput = 0;
-let completedForm = {name:'', description:'', assignee: ''};
-let completedFormArray = [];
+let completedForm = { name: "", description: "", assignee: "" };
 
 // event listener for click on submit button
 formValidate.addEventListener("submit", (event) => {
+  // Prevent default action
   event.preventDefault();
 
-// AssignedTo -> Not Empty and longer than 8 characters
-  if (formValidateAssignee.value.length >= 8) {
-    formValidateAssignee.classList.add("is-valid");
-    formValidateAssignee.classList.remove("is-invalid");
-// store input value into variable - Assignee -> String
-    completedForm.assignee = formValidateAssignee.value;
-// error message for incorrect input
+  // AssignedTo -> Not Empty and longer than 8 characters
+  if (formAssignee.value.length >= 8) {
+    formAssignee.classList.add("is-valid");
+    formAssignee.classList.remove("is-invalid");
+    // store input value into variable - Assignee -> String
+    completedForm.assignee = formAssignee.value;
+    // error message for incorrect input
   } else {
-    formValidateAssignee.classList.add("is-invalid");
-    formValidateAssignee.classList.remove("is-valid");
+    formAssignee.classList.add("is-invalid");
+    formAssignee.classList.remove("is-valid");
   }
 
-// Description -> Not Empty and longer than 15 characters
-  if (formValidateTaskDescription.value.length >= 15) {
-    formValidateTaskDescription.classList.add("is-valid");
-    formValidateTaskDescription.classList.remove("is-invalid");
-// store input value into variable - Description -> String
-    completedForm.description = formValidateTaskDescription.value;
-// error message for incorrect input
+  // Description -> Not Empty and longer than 15 characters
+  if (formTaskDescription.value.length >= 15) {
+    formTaskDescription.classList.add("is-valid");
+    formTaskDescription.classList.remove("is-invalid");
+    // store input value into variable - Description -> String
+    completedForm.description = formTaskDescription.value;
+    // error message for incorrect input
   } else {
-    formValidateTaskDescription.classList.add("is-invalid");
-    formValidateTaskDescription.classList.remove("is-valid");
+    formTaskDescription.classList.add("is-invalid");
+    formTaskDescription.classList.remove("is-valid");
   }
 
-// Name -> Not Empty and longer than 8 characters
-  if (formValidateTaskName.value.length >= 8) {
-    formValidateTaskName.classList.add("is-valid");
-    formValidateTaskName.classList.remove("is-invalid");
-// store input value into variable - Name -> String
-    completedForm.name = formValidateTaskName.value;
-// error message for incorrect input
+  // Name -> Not Empty and longer than 8 characters
+  if (formTaskName.value.length >= 8) {
+    formTaskName.classList.add("is-valid");
+    formTaskName.classList.remove("is-invalid");
+    // store input value into variable - Name -> String
+    completedForm.name = formTaskName.value;
+    // error message for incorrect input
   } else {
-    formValidateTaskName.classList.add("is-invalid");
-    formValidateTaskName.classList.remove("is-valid");
+    formTaskName.classList.add("is-invalid");
+    formTaskName.classList.remove("is-valid");
   }
 
-    console.log(completedForm);
+  // Add the task to the task manager
+  taskManager.addTask(
+    completedForm.name,
+    completedForm.description,
+    completedForm.assignee
+  );
+
+  // Form reset
+  formReset = () => {
+    formValidate.reset();
+    completedForm = { name: "", description: "", assignee: "" };
+  };
+  formReset();
 });
