@@ -2,16 +2,17 @@
 const taskManager = new TaskManager(0);
 
 // Select the New Task Form
-const formValidate = document.querySelector(".form-validate");
+const formValidate = document.querySelector(".form-validate1");
 
 // variables for form fields
 const formAssignee = document.querySelector("#assignee");
 const formTaskDescription = document.querySelector("#taskDescription");
 const formTaskName = document.querySelector("#taskName");
 const formDueDate = document.querySelector("#dueDate");
+const formStatus = document.querySelector("#taskStatus");
 
 // variables for object
-let completedForm = { name: "", description: "", assignee: "" };
+let completedForm = { name: "", description: "", assignee: "", dueDate: "", status: ""};
 
 // event listener for click on submit button
 formValidate.addEventListener("submit", (event) => {
@@ -71,22 +72,38 @@ formValidate.addEventListener("submit", (event) => {
   if (formDueDate.valueAsNumber < today.getTime()) {
     alert("Date is in the past");
   } else {
-    formTaskName.classList.add("is-valid");
-    formTaskName.classList.remove("is-invalid");
+    completedForm.dueDate = formDueDate.value;
+    formDueDate.classList.add("is-valid");
+    formDueDate.classList.remove("is-invalid");
   }
-      
+  
+  // store input value into variable - status -> String
+  completedForm.status = formStatus.value;
+
   // Add the task to the task manager
   taskManager.addTask(
     completedForm.name,
     completedForm.description,
-    completedForm.assignee
+    completedForm.assignee,
+    completedForm.dueDate,
+    completedForm.status
   );
-    console.log(taskManager);
 
-//   // Form reset
+  // render the tasks
+  taskManager.render();
+  console.log(taskManager);
+
+// Form reset
   formReset = () => {
     formValidate.reset();
-    completedForm = { name: "", description: "", assignee: "" };
+    completedForm = { name: "", description: "", assignee: "", dueDate: "", status: ""};
   };
-  formReset();
+  formReset()
+
+  formValidate.submit(function() {
+    const modal = document.querySelector("#myModal");
+    modal.modal("hide");
+  });
+
 });
+
