@@ -66,65 +66,7 @@
                   data-parent="#accordion"
                 >
                   <div class="card-body bg-primary">
-                    <form class="form-validate" novalidation>
-                      <div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="taskName"
-                          placeholder="Name"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Please enter at least 8 characters
-                        </div>
-                      </div>
-                      <div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="taskDescription"
-                          placeholder="Task Description"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Please enter at least 15 characters
-                        </div>
-                      </div>
-                      <!-- due date -->
-                      <div class="row">
-                        <div class="col-3 text-light">
-                            <label for="DueDate">DueDate:</label>
-                            <input type="date" id="dueDate" name="DueDate" required> 
-                        </div>
-                      </div>
-                    <!-- due date -->
-                      <div>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="assignee"
-                          placeholder="Assignee"
-                          required
-                        />
-                        <div class="invalid-feedback">
-                          Please enter at least 8 characters
-                        </div>
-                      </div>
-                      <div>
-                        <select id="taskStatus" class="form-control" required>
-                          <option value="" disabled selected hidden>
-                            Task status
-                          </option>
-                          <option>In progress</option>
-                          <option>Completed</option>
-                        </select>
-                      </div>
-                      <button class="btn btn-success" id="clickHere" type="submit">
-                        Completed
-                      </button>
-                      <button class="btn btn-danger">Delete</button>
-                    </form>
+                    <!-- FORM REMOVED -->
                   </div>
                 </div>
               </div>
@@ -430,9 +372,80 @@
       </div>
     </div>
     <div class="task-button">
-      <button type="button" class="btn btn-dark btn-lg btn-block">
+      <button type="button" class="btn btn-dark btn-lg btn-block" data-toggle="modal" data-target="#myModal">
         Create New Task
       </button>
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">New Task</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-validate" novalidation>
+                <div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="taskName"
+                    placeholder="Name"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter at least 8 characters
+                  </div>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="taskDescription"
+                    placeholder="Task Description"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter at least 15 characters
+                  </div>
+                </div>
+                <!-- due date -->
+                <div class="row">
+                  <div class="col-3 text-light">
+                      <label for="DueDate">DueDate:</label>
+                      <input type="date" id="dueDate" name="DueDate" required> 
+                  </div>
+                </div>
+              <!-- due date -->
+                <div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="assignee"
+                    placeholder="Assignee"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter at least 8 characters
+                  </div>
+                </div>
+                <div>
+                  <select id="taskStatus" class="form-control" required>
+                    <option value="" disabled selected hidden>
+                      Task status
+                    </option>
+                    <option>In progress</option>
+                    <option>Completed</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-success" id="clickHere" type="submit">
+                Completed
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
