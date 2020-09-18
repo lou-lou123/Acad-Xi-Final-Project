@@ -1,18 +1,18 @@
 // create task HTML
-const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => `
-<li class="list-group-item" data-task-id=${id}>
+const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
+return `<li class="list-group-item" data-task-id=${id}>
     <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
         <h5>${name}</h5>
-        <span class="badge badge-danger">${status}</span>
+        <span class="badge ${status === "TO DO" ? "badge-danger" : "badge-success"}">${status}</span>
     </div>
     <div class="d-flex w-100 mb-3 justify-content-between">
         <small>Assigned To: ${assignedTo}</small>
         <small>Due: ${dueDate}</small>
     </div>
     <p>${description}</p>
+<button type="button" class="done-button ${status === "TO DO" ? "visible" : "invisible"}"> Mark As Done </button>
 </li>
-<button type="button" class="done-button"> Mark As Done </button>
-`;
+`};
 
 // create taskmanager class
 class TaskManager {
@@ -27,7 +27,7 @@ class TaskManager {
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: "TODO",
+      status: "TO DO",
       id: this.currentId++,
     };
     // push to array
