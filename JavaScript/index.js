@@ -91,7 +91,6 @@ formValidate.addEventListener("submit", (event) => {
 
   // render the tasks
   taskManager.render();
-  console.log(taskManager);
 
 // Form reset
   formReset = () => {
@@ -108,6 +107,12 @@ tasksList.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     // target parent element
     const parentTask = event.target.parentElement.parentElement;
-    console.log(parentTask);
+    const taskId = Number(parentTask.dataset.taskId);
+    // get task from the TaskManager using taskId
+    const task = taskManager.getTaskById(taskId);
+    // update status to done
+    completedForm.status = "DONE";
+    console.log(completedForm.status);
+    taskManager.render();
   } 
 });
