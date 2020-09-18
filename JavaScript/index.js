@@ -98,6 +98,7 @@ formValidate.addEventListener("submit", (event) => {
     completedForm = { name: "", description: "", assignee: "", dueDate: "", status: ""};
   };
   formReset()
+  $('#myModal').modal('toggle')
 });
 
 // select the task list and store as variable
