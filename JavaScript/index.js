@@ -106,6 +106,7 @@ formValidate.addEventListener("submit", (event) => {
   formStatus.classList.remove('is-valid');
   // Close the modal by toggling
   $('#myModal').modal('toggle')
+  $('#collapseOne').collapse('toggle');
 });
 
 // select the task list and store as variable
