@@ -1,6 +1,6 @@
 // create task HTML
 const createTaskHtml = (name, description, assignedTo, dueDate, status) => `
-<li class="list-group-item">
+<li class="list-group-item" id="listItem">
     <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
         <h5>${name}</h5>
         <span class="badge badge-danger">${status}</span>
@@ -11,6 +11,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => `
     </div>
     <p>${description}</p>
 </li>
+<button type="button class="done-button> Mark As Done </button>
 `;
 
 // create taskmanager class

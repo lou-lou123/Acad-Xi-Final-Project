@@ -99,11 +99,15 @@ formValidate.addEventListener("submit", (event) => {
     completedForm = { name: "", description: "", assignee: "", dueDate: "", status: ""};
   };
   formReset()
-
-  formValidate.submit(function() {
-    const modal = document.querySelector("#myModal");
-    modal.modal("hide");
-  });
-
 });
 
+// select the task list and store as variable
+const tasksList = document.querySelector("#tasksList");
+// add event listener for click event
+tasksList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("done-button")) {
+    // target parent element
+    const parentTask = event.target.parentElement.parentElement;
+    console.log("Parent Task = " + parentTask);
+  } 
+});
