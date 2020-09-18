@@ -108,6 +108,6 @@ tasksList.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     // target parent element
     const parentTask = event.target.parentElement.parentElement;
-    console.log("Parent Task = " + parentTask);
+    console.log(parentTask);
   } 
 });

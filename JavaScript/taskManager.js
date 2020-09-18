@@ -1,6 +1,6 @@
 // create task HTML
-const createTaskHtml = (name, description, assignedTo, dueDate, status) => `
-<li class="list-group-item" id="listItem">
+const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => `
+<li class="list-group-item" data-task-id=${id}>
     <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
         <h5>${name}</h5>
         <span class="badge badge-danger">${status}</span>
@@ -11,7 +11,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) => `
     </div>
     <p>${description}</p>
 </li>
-<button type="button class="done-button> Mark As Done </button>
+<button type="button" class="done-button"> Mark As Done </button>
 `;
 
 // create taskmanager class
@@ -50,7 +50,8 @@ class TaskManager {
         currentTask.description,
         currentTask.assignedTo,
         formattedDate,
-        currentTask.status
+        currentTask.status,
+        currentTask.id
       );
       // push task into array
       tasksHtmlList.push(taskHtml);
@@ -60,4 +61,18 @@ class TaskManager {
     // select task element
     document.querySelector("#tasksList").innerHTML = tasksHtml;
   }
-}
+  // method get task IDs
+  getTaskById(taskId) {
+    // variable to store found tasks
+    let foundTask;
+    // loop for this tasks array
+    for (let j = 0; j < this.tasks.length; j++) {
+      //current task in loop
+      const task = this.tasks[j];
+      if (task.id === taskId) {
+        foundTask = task;
+      }
+    }
+    return foundTask;
+  }
+ }
