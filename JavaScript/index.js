@@ -98,6 +98,14 @@ formValidate.addEventListener("submit", (event) => {
     completedForm = { name: "", description: "", assignee: "", dueDate: "", status: ""};
   };
   formReset()
+  // Clear the bootstrap validation ready for next inputs
+  formAssignee.classList.remove('is-valid');
+  formTaskDescription.classList.remove('is-valid');
+  formTaskName.classList.remove('is-valid');
+  formDueDate.classList.remove('is-valid');
+  formStatus.classList.remove('is-valid');
+  // Close the modal by toggling
+  $('#myModal').modal('toggle')
 });
 
 // select the task list and store as variable
