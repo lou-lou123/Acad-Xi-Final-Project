@@ -1,55 +1,55 @@
 body {
-    background-color: rgb(43, 45, 47)
+  background-color: rgb(43, 45, 47);
 }
 
 section {
-    color: white;
+  color: white;
 }
 
 .card-body {
-    text-align: center;
+  text-align: center;
 }
 
 .navbar-brand {
-    text-align: center;
+  text-align: center;
 }
 
 .form-control-plaintext {
-    color:white;
+  color: white;
 }
 
 .btn {
-    border-color: white;
+  border-color: white;
 }
 
 .btn-link {
-    color: white;
+  color: white;
 }
 
-#accordion{
-    display: flex;
-    padding-top: 5%;
-    text-align: center;
-    background-color: rgb(43, 45, 47)
+#accordion {
+  display: flex;
+  padding-top: 5%;
+  text-align: center;
+  background-color: rgb(43, 45, 47);
 }
 
 .task-button {
-    display: flex;
-    padding-top: 10%;
+  display: flex;
+  padding-top: 10%;
 }
 
 .due-date-name {
-    color: black;
+  color: black;
 }
 
 .due-date {
-    padding-left: 4%;
+  padding-left: 4%;
 }
 
 .collapsed {
-    width: 30%;
+  width: 30%;
 }
 
 .form-box {
-    padding-bottom: 1%;
+  padding-bottom: 1%;
 }
