@@ -6,17 +6,12 @@ section {
     color: white;
 }
 
-#task-body {
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
 .card-body {
     text-align: center;
 }
 
 .navbar-brand {
-    padding-right: 30%;
+    text-align: center;
 }
 
 .form-control-plaintext {
@@ -24,7 +19,7 @@ section {
 }
 
 .btn {
-    border-color: black;
+    border-color: white;
 }
 
 .btn-link {
@@ -32,8 +27,29 @@ section {
 }
 
 #accordion{
+    display: flex;
+    padding-top: 5%;
     text-align: center;
     background-color: rgb(43, 45, 47)
 }
 
+.task-button {
+    display: flex;
+    padding-top: 10%;
+}
 
+.due-date-name {
+    color: black;
+}
+
+.due-date {
+    padding-left: 4%;
+}
+
+.collapsed {
+    width: 30%;
+}
+
+.form-box {
+    padding-bottom: 1%;
+}

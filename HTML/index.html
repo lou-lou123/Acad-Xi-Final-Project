@@ -20,12 +20,16 @@
         data-toggle="collapse"
         data-target="#collapsibleNavbar"
       >
-        <span class="navbar-toggler-icon"></span>
+        <!-- Hamburger menu
+          <span class="navbar-toggler-icon"></span> -->
       </button>
-      <a class="navbar-brand mx-auto">My Tasks</a>
+      <a class="navbar-brand mx-auto">Checkd</a>
+      <!-- Search bar
+        <div class="search-bar">
       <form class="form-inline w-25" action="/action_page.php">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" />
       </form>
+      </div> -->
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -49,7 +53,7 @@
                 <div class="card-header bg-dark" id="headingOne">
                   <h5 class="mb-0">
                     <button
-                      class="btn btn-link"
+                      class="btn btn-link collapsed"
                       data-toggle="collapse"
                       data-target="#collapseOne"
                       aria-expanded="true"
@@ -128,23 +132,23 @@
           <div class="row">
             <div class="col">
               <div class="card">
-                <div class="card-header bg-dark" id="headingTwo">
+                <div class="card-header bg-dark" id="headingThree">
                   <h5 class="mb-0">
                     <button
                       class="btn btn-link collapsed"
                       data-toggle="collapse"
-                      data-target="#collapseTwo"
+                      data-target="#collapseThree"
                       aria-expanded="false"
-                      aria-controls="collapseTwo"
+                      aria-controls="collapseThree"
                     >
                       Completed
                     </button>
                   </h5>
                 </div>
                 <div
-                  id="collapseTwo"
+                  id="collapseThree"
                   class="collapse"
-                  aria-labelledby="headingTwo"
+                  aria-labelledby="headingThree"
                   data-parent="#accordion"
                 >
                   <div class="card-body bg-success">
@@ -174,12 +178,14 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title">New Task</h4>
+              <div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
             </div>
             <div class="modal-body">
               <form class="form-validate1" novalidation>
-                <div>
+                <div class="form-box">
                   <input
                     type="text"
                     class="form-control"
@@ -191,7 +197,7 @@
                     Please enter at least 8 characters
                   </div>
                 </div>
-                <div>
+                <div class="form-box">
                   <input
                     type="text"
                     class="form-control"
@@ -204,14 +210,16 @@
                   </div>
                 </div>
                 <!-- due date -->
-                <div class="row">
-                  <div class="col-3 text-light">
-                      <label for="DueDate">DueDate:</label>
-                      <input type="date" id="dueDate" name="DueDate" required> 
+                <div class= "form-box">
+                <div class="row due-date">
+                  <div class="text-light date-picker">
+                     <label for="DueDate" class="due-date-name">Due Date</label>
+                        <input type="date" id="dueDate" name="DueDate" required>
                   </div>
                 </div>
+              </div>
               <!-- due date -->
-                <div>
+                <div class="form-box">
                   <input
                     type="text"
                     class="form-control"
@@ -223,10 +231,10 @@
                     Please enter at least 8 characters
                   </div>
                 </div>
-                <div>
+                <div class="form-box">
                   <select id="taskStatus" class="form-control" required>
                     <option value="" disabled selected hidden>
-                      Task status
+                      Task Status
                     </option>
                     <option>To do</option>
                   </select>
