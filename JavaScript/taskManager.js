@@ -20,6 +20,25 @@ class TaskManager {
     this.tasks = [];
     this.currentId = currentId;
   }
+  // save method
+  save() {
+    const tasksJSON = JSON.stringify(this.tasks);
+    localStorage.setItem("tasks", tasksJSON);
+    const currentId = String(this.currentId);
+    localStorage.setItem("currentId", currentId);
+  };
+
+  //load method
+  load() {
+    if (localStorage.getItem("tasks")) {
+      const tasksJSON = localStorage.getItem("tasks");
+      this.tasks = JSON.parse(tasksJSON);
+    }
+    if (localStorage.getItem("currentId")) {
+      const currentId = localStorage.getItem("currentId");
+      this.currentId = Number(currentId);
+    }
+  };
   // method addTask
   addTask(name, description, assignedTo, dueDate, status, id) {
     const task = {

@@ -1,6 +1,11 @@
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
 
+// load tasks to page
+taskManager.load();
+// render tasks to page
+taskManager.render();
+
 // Select the New Task Form
 const formValidate = document.querySelector(".form-validate1");
 
@@ -88,7 +93,8 @@ formValidate.addEventListener("submit", (event) => {
     completedForm.dueDate,
     completedForm.status
   );
-
+  //call taskmanager save method
+  taskManager.save();
   // render the tasks
   taskManager.render();
 
@@ -121,6 +127,8 @@ tasksList.addEventListener("click", (event) => {
     const task = taskManager.getTaskById(taskId);
     // update status to done
     task.status = "DONE";
+    //call taskmanager save method
+    taskManager.save();
     taskManager.render();
   } 
 });
