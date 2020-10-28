@@ -5,5 +5,5 @@ Completed over the course of 5 week, the task of the Final Project was to create
 ## Introduction
 From the initial stages of planning, to creating the wireframe, to implementing the technical skills gained (HTML, CSS, JavaScript and Bootcamp). Over the course of 5 weeks we have managed to create a task planner that is functional and caters to users who prefer dark mode.
 ## License
-You can check out the full license [here](
+You can check out the full license [here](https://github.com/lou-lou123/Acad-Xi-Final-Project/blob/master/LICENSE)
 This project is licensed under the terms of the MIT license.
